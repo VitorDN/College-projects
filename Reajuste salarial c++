@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+float salariototal(float salario, string nome){
+float total;
+if (salario <= 1500){
+  total = salario * 1.25;
+  cout << nome << ", seu salário reajustado será de: " << total << endl;
+}if (salario > 1500 && salario <= 3000){
+  total = salario * 1.20;
+  cout << nome <<", seu salário reajustado será de: " << total << endl;
+}if (salario > 3000 && salario <= 6000){
+  total = salario * 1.15;
+  cout << nome <<", seu salário reajustado será de: " << total <<  endl;
+}if (salario > 6000){
+  total = salario * 1.10;
+  cout << nome <<", seu salário reajustado será de: " << total << endl;
+}
+return total;
+}
+int main() {
+int contador = 1;
+int x;
+float somaatual = 0;
+float somareajustado;
+ cout <<" Digite o número de funcionários a calcular"<< endl;
+ cin >> x;
+while (contador <= x){
+float salario;
+string nome;
+float total;
+ cout << "Digite o seu nome e o seu salário: " << endl;
+ cin >> nome >> salario;
+  total=salariototal(salario, nome);
+  contador = contador +1;
+  somaatual = somaatual + salario; 
+  somareajustado = somareajustado + total;
+ }
+ cout << "Soma do salário atual: "<< somaatual << endl;
+ cout << "Soma do salário reajustado: "<< somareajustado << endl;
+}
